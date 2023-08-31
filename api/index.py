@@ -54,6 +54,8 @@ def keyword_list():
     for text in split_replace_keyword:
         result.append('#'+text)
 
-    res = ','.join(result).replace(',', ' ')
+    res = ','.join(result)
 
-    return res
+    replace_res = res.replace(',', ' ')
+
+    return replace_res
