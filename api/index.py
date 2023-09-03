@@ -7,6 +7,20 @@ app = Flask(__name__)
 CORS(app)
 
 
+@app.route('/api/day')
+def day():
+    headers = {
+        'Referer': 'https://m.blog.naver.com',
+    }
+
+    blog_id = request.args.get('blog_id')
+
+    response = requests.get(
+        f'https://m.blog.naver.com/api/blogs/{blog_id}', headers=headers)
+
+    return response.content
+
+
 @app.route('/api/popular-post-list')
 def popular_post_list():
     headers = {
