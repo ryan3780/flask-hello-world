@@ -6,7 +6,6 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-
 @app.route('/api/day')
 def day():
     headers = {
